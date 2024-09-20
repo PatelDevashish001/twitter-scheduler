@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta as td
+=from datetime import datetime, timedelta as td
 from flask import Flask, render_template, request, redirect
 import gspread as gs
 
@@ -8,11 +8,11 @@ app = Flask(__name__)
 try:
     gc = gs.service_account(filename='gcredentials.json')
 except FileNotFoundError:
-    print("Error: 'gcredentials.json' not found. Please ensure it's in the same directory as your script.")
+    print("Error: 'gcredentials.json' not found.)
     exit(1)
 
 try:
-    ss = gc.open_by_key('1AAn_lKhi9euxlb1YHt0ZQm7dvkA2CMqmVLy1X6swhhM')
+    ss = gc.open_by_key('key_id')
 except Exception as e:
     print(f"Error opening spreadsheet: {e}")
     exit(1)
